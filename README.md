@@ -5,6 +5,8 @@ This project focuses on the design and verification of a Mod-12 Up/Down Counter 
 
 A SystemVerilog-based verification environment is developed to generate stimulus, drive the DUT, monitor the DUT activity, calculate expected results using a reference model, and compare the expected and actual outputs using a scoreboard.The verification environment also includes constrained-random stimulus, functional coverage and cross coverage to improve verification completeness.
 
+<img width="692" height="237" alt="image" src="https://github.com/user-attachments/assets/20b902d6-e3c7-4143-bb94-cee92b8c197f" />
+
 # Design Features
 
 The Mod-12 Up/Down Counter supports the following operations:
@@ -69,6 +71,8 @@ Any mismatch between the expected and actual values is reported as a verificatio
 Functional coverage is used to determine whether important counter operations and scenarios have been exercised during simulation.
 
  Verification Scenarios
+ <img width="726" height="230" alt="image" src="https://github.com/user-attachments/assets/9e3c213e-9e34-4a46-93af-c9ee2019962c" />
+
 
 ## The verification environment covers important counter operations including:
 
@@ -83,3 +87,38 @@ Functional coverage is used to determine whether important counter operations an
 - Constrained-random combinations of control signals
 - The scoreboard checks the DUT response for the generated transactions.
 
+## Verification Flow
+
+The overall verification flow is:
+
+1.Transaction Generation → Driver → DUT → Monitor → Scoreboard
+2.The reference model generates the expected output independently.
+3.The scoreboard then performs:\
+Expected Output ↔ Actual DUT Output
+4.Functional coverage collects information about the scenarios exercised during simulation.
+
+# 📊 Verification Results
+
+The Mod-12 Up/Down Counter was verified using a SystemVerilog
+self-checking verification environment.
+
+### Final Simulation Results
+
+| Metric | Result |
+|---|---:|
+| Transactions Completed | 100 |
+| Data Compared by Scoreboard | 100 |
+| Expected Transactions | 100 |
+| Actual Transactions | 100 |
+| Functional Coverage | 100.00% |
+
+The scoreboard successfully verified the DUT responses against the
+reference model, while functional coverage reached 100% for the
+implemented coverage model.
+
+### Simulation Summary
+
+✅ 100 transactions completed  
+✅ Expected and actual DUT outputs verified by scoreboard  
+✅ 100% functional coverage achieved  
+✅ Simulation completed successfully
